@@ -119,3 +119,6 @@ int pop()
 // Example: 
 // Enter the prefix expression: *+45-92
 // Result = 63
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)

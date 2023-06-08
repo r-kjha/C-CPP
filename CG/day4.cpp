@@ -3,6 +3,7 @@
 #include <graphics.h>
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 
 int main() {
     int gd = DETECT, gm;
@@ -14,7 +15,8 @@ int main() {
     printf("Enter the value of x2 and y2: ");
     scanf("%d %d", &x2, &y2);
 
-    
+    outtextxy(x1,y1,(char*)"* A(x1,y1)");
+    outtextxy(x2,y2,(char*)"* B(x2,y2)");
 
     int dx = x2 - x1;
     int dy = y2 - y1;

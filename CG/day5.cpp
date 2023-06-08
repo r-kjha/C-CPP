@@ -7,6 +7,8 @@
 //function to draw line using Bresenhams LDA
 void drawline(int x0,int y0,int x1,int y1){
     int dx,dy,p,x,y;
+    outtextxy(x0,y0,(char*)"* A(x0,y0)");
+    outtextxy(x1,y1,(char*)"* B(x1,y1)");
     dx=x1-x0;
     dy=y1-y0;
     x=x0;
@@ -22,6 +24,7 @@ void drawline(int x0,int y0,int x1,int y1){
             p=p+2*dy;
         }
         x=x+1;
+        delay(50);
     }
 }
 
@@ -29,10 +32,10 @@ int main(){
     int gd=DETECT,gm,x0,y0,x1,y1;
     initgraph(&gd,&gm,(char*)"");
 
-    printf("Enter Values for X0,Y0");
+    printf("Enter Values for X0,Y0: ");
     scanf("%d,%d",&x0,&y0);
 
-    printf("Enter Values for X1,Y1");
+    printf("Enter Values for X1,Y1: ");
     scanf("%d,%d",&x1,&y1);
 
     drawline(x0,y0,x1,y1);
