@@ -39,7 +39,7 @@ int main()
     char prefix[MAX]; // prefix expression declaration
     int result;  // result variable declaration
     printf("Enter the prefix expression: "); // display message
-    scanf("%s", prefix); // read the prefix expression
+    scanf("%s", &prefix); // read the prefix expression
     result = evaluate(prefix); // evaluate the prefix expression
     printf("Result = %d\n", result); // print the result
     return 0; 
