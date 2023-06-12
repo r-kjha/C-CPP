@@ -21,7 +21,7 @@ Step 4: Exit
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 10
+#define MAX 3
 
 int queue[MAX];
 int front = -1, rear = -1;
@@ -81,7 +81,7 @@ void enqueue(int item)
 int dequeue()
 {
     int item;
-    if (front == -1 || front == rear + 1)
+    if (front == -1 )
         return -1;
     item = queue[front];
     front = front + 1;

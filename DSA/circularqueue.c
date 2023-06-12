@@ -22,7 +22,7 @@ Step 4: Exit
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 10
+#define MAX 3
 
 int queue[MAX];
 int front = -1, rear = -1;
@@ -100,7 +100,7 @@ void display()
     }
     printf("The elements of the queue are:\n");
     for (i = front; i != rear; i = (i + 1) % MAX)
-        printf("%d\n", queue[i]);
-    printf("%d\n", queue[i]);
+        printf("%d ", queue[i]);
+    printf("%d ", queue[i]);
 }
 
