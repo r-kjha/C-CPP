@@ -47,19 +47,16 @@ int operate(int a,int b, char operator){
 }
 
 int evaluate(char expression[]){
-    int length,i,result,a,b,val;
-    char character;
-    length = strlen(expression);
 
-    for(i=0;i<length;i++){
-        character = expression[i];
+    for(int i=0;expression[i];i++){ //for(i=0;i<length;i++){ or //  expression[i] != '\0' 
+        char character = expression[i];
 
         if(isdigit(character)){
             push(character-'0');
         }else{
-            a=pop();
-            b=pop();
-            val=operate(a,b,character);
+            int a=pop();
+            int b=pop();
+            int val=operate(a,b,character);
             push(val);
         }
 
