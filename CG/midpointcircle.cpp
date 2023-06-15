@@ -19,6 +19,7 @@
 
 #include <graphics.h>
 #include <stdio.h>
+#include <dos.h>
 
 void drawcircle(int xc, int yc, int x, int y) {
     putpixel(xc+x, yc+y, 7);
@@ -35,12 +36,12 @@ int main() {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, (char*)" ");
 
-    int xc=200, yc=200, r=150, x, y, pk;
-   /* printf("Enter the center of the circle: ");
+    int xc, yc, r, x, y, pk;
+    printf("Enter the center of the circle: ");
     scanf("%d %d", &xc, &yc);
     printf("Enter the radius of the circle: ");
     scanf("%d", &r);
-    */
+   
 
     x = 0;
     y = r;
