@@ -19,24 +19,27 @@
 
 #include <graphics.h>
 #include <stdio.h>
-#include <dos.h>
+#include <conio.h>
+#include <direct.h>
+// #include <dos.h>
 
 void drawcircle(int xc, int yc, int x, int y) {
-    putpixel(xc+x, yc+y, 7);
-    putpixel(xc-x, yc+y, 7);
+    putpixel(xc+x, yc+y, 2);
+    putpixel(xc-x, yc+y, 2);
     putpixel(xc+x, yc-y, 7);
     putpixel(xc-x, yc-y, 7);
     putpixel(xc+y, yc+x, 7);
     putpixel(xc-y, yc+x, 7);
     putpixel(xc+y, yc-x, 7);
     putpixel(xc-y, yc-x, 7);
+    
 }
 
 int main() {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, (char*)" ");
 
-    int xc, yc, r, x, y, pk;
+    int xc=200, yc=200, r=150, x, y, pk;
     printf("Enter the center of the circle: ");
     scanf("%d %d", &xc, &yc);
     printf("Enter the radius of the circle: ");
@@ -62,6 +65,8 @@ int main() {
         }
         drawcircle(xc, yc, x, y);
         delay(100);
+        outtextxy(getmaxx()/2
+        , getmaxy()-50, (char*) "Mid Point Circle Generation Algorithm");
     }  
 
     getch();
