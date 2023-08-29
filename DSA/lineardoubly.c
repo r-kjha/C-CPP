@@ -137,6 +137,58 @@ void insertAtSpecificPosition(){
     }
 }
 
+// delete at beginning
+void deleteAtBeginning(){
+    struct node *temp;
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        temp = head;
+        head = head->next;
+        head->prev = NULL;
+        free(temp);
+    }
+}
+
+// delete at end
+
+void deleteAtEnd(){
+    struct node *temp;
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->prev->next = NULL;
+        free(temp);
+    }
+}
+
+// delete at specific position
+
+void deleteAtSpecificPosition(){
+    struct node *temp;
+    int pos, i;
+    if(head == NULL){
+        printf("List is empty\n");
+    }
+    else{
+        printf("Enter the position: ");
+        scanf("%d", &pos);
+        temp = head;
+        for(i=1; i<pos; i++){
+            temp = temp->next;
+        }
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
+        free(temp);
+    }
+}
+
 void display(){
     struct node *temp;
     if(head == NULL){
